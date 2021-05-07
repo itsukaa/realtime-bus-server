@@ -1,5 +1,12 @@
 package com.itsukaa.realtimebus.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Location {
     /**
      * 经度
@@ -13,43 +20,4 @@ public class Location {
      * 城市
      */
     private String cityName;
-
-    public Location(String longitude, String latitude, String cityName) {
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.cityName = cityName;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "longitude='" + longitude + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", cityName='" + cityName + '\'' +
-                '}';
-    }
 }

@@ -48,10 +48,9 @@ public class WuHanParser {
             station.setStationLocation(new Location(stationDto.getJ(), stationDto.getW(), "武汉"));
             station.setStationName(stationDto.getN());
 
-            //TODO: 将该公交车站的线路注入station
-            //价格、查找站、开始结束时间、公交公司、
-            //...
-            station.setStationLines((List<Line>) getLinesByStationId(station.getStationId()).getRes());
+            final List<Line> lines = (List<Line>) getLinesByStationId(station.getStationId()).getRes();
+
+            station.setStationLines(lines);
             stations.add(station);
         }
         return new Res(200, "ok", stations);

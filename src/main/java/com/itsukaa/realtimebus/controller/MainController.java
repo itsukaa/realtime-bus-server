@@ -5,10 +5,7 @@ import com.itsukaa.realtimebus.entity.Location;
 import com.itsukaa.realtimebus.entity.bean.Res;
 import com.itsukaa.realtimebus.http.parser.api.BusParser;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -18,18 +15,21 @@ public class MainController {
 
     BusParser busParser = new BusParser();
 
-    @GetMapping(value = "/stations/nearBy")
+    @PostMapping(value = "/stations/nearBy")
     public Res getNearByStations(@RequestBody Location location) throws IOException, JsonMappingException {
+        log.warn(location.toString());
 
-        return busParser.getNearByStationsByLocation(location);
+        final Res res = busParser.getNearByStationsByLocation(location);
+        log.warn(res.toString());
+        return res;
     }
 
-    @GetMapping(value = "/lines/{stationId}")
+    @PostMapping(value = "/lines/{stationId}")
     public Res getLinesByStationId(@PathVariable String stationId) throws IOException {
         return busParser.getLinesByStationId(stationId);
     }
 
-    @GetMapping(value = "/buses/{lineId}")
+    @PostMapping(value = "/buses/{lineId}")
     public Res getBusesByLineId(@PathVariable String lineId) throws IOException {
         return busParser.getBusesByLineId(lineId);
     }
