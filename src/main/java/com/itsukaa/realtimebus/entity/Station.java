@@ -1,7 +1,11 @@
 package com.itsukaa.realtimebus.entity;
 
+import lombok.Data;
+
 import java.util.List;
 
+
+@Data
 public class Station {
     /**
      * 站台位置
@@ -23,36 +27,4 @@ public class Station {
      */
     private List<Line> stationLines;
 
-
-    public Location getStationLocation() {
-        return stationLocation;
-    }
-
-    public void setStationLocation(Location stationLocation) {
-        this.stationLocation = stationLocation;
-    }
-
-    public String getStationId() {
-        return stationId;
-    }
-
-    public void setStationId(String stationId) {
-        this.stationId = stationId;
-    }
-
-    public String getStationName() {
-        return stationName;
-    }
-
-    public void setStationName(String stationName) {
-        this.stationName = stationName;
-    }
-
-    public List<Line> getStationLines() {
-        return stationLines;
-    }
-
-    public void setStationLines(List<Line> stationLines) {
-        this.stationLines = stationLines;
-    }
 }

@@ -1,5 +1,9 @@
 package com.itsukaa.realtimebus.entity;
 
+
+import lombok.Data;
+
+@Data
 public class Bus {
     /**
      * 公交车唯一标识
@@ -17,4 +21,6 @@ public class Bus {
      * 公交车的位置
      */
     private Location location;
+
+    private String busFlag;
 }
