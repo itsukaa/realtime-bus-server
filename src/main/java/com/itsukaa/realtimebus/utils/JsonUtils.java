@@ -95,7 +95,7 @@ public class JsonUtils {
                 bus.setBusId(info[0]);
                 bus.setBusFlag(info[1]);
                 bus.setBusFromStartStationNum(Integer.valueOf(info[2]));
-                bus.setBusIsArrived("1".equals(info[3]));
+                bus.setBusIsArrived(!"1".equals(info[3]));
                 bus.setLocation(new Location(info[4], info[5], "武汉"));
                 buses.add(bus);
             }

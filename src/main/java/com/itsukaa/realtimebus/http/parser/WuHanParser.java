@@ -96,7 +96,6 @@ public class WuHanParser {
 
             lines.add(line);
         }
-        log.warn(String.valueOf(lines));
         return new Res(200, "ok", lines);
     }
 

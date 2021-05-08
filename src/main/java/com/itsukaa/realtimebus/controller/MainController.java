@@ -20,7 +20,7 @@ public class MainController {
         log.warn(location.toString());
 
         final Res res = busParser.getNearByStationsByLocation(location);
-        log.warn(res.toString());
+        log.warn("数据返回");
         return res;
     }
 
